@@ -1,2 +1,2 @@
-# colour_blindness
+# Colour blindness
 Simulator for designers and people with color blindness
