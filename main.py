@@ -19,7 +19,20 @@ def upload_img(route)->list:
 
   return img
 
-def run():git 
+def image_view(img:list)->None:
+  height = len(img)
+  width = len(img[0])
+  mat = []
+  for i in range(height):
+    row = []
+    for j in range(width):
+      r, g, b = img[i][j]
+      row.append([r, g, b])
+    mat.append(row)
+  plt.imshow(mat)
+  plt.show
+
+def run():
   upload_img('image.png') # Image route
 
 
