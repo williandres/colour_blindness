@@ -1,6 +1,7 @@
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
+######----- MAIN FUNCTIONS -----#####
 def upload_img(route)->list:
   mat = mpimg.imread(route).tolist()
   height = len(mat)
@@ -32,8 +33,22 @@ def image_view(img:list)->None:
   plt.imshow(mat)
   plt.show
 
+##################---- FILTER ----##################
+def rotate90_img(img:list)->list:
+  height = len(img[0])
+  width = len(img)
+  new_img = []
+
+  for i in range(height):
+    row = []
+    for j in range(width):
+      row.append(img[i][j])
+    new_img.append(row)
+
+  return img
+#-#-# RUN -#-#-#
 def run():
-  upload_img('image.png') # Image route
+  image_view(rotate90_img(upload_img('/content/art.png'))) # Image route
 
 
 if __name__ == '__main__':
