@@ -29,6 +29,7 @@ def image_view(img:list)->None:
       row.append([r, g, b])
     mat.append(row)
   plt.imshow(mat)
+  plt.axis('off')
   plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1200)
 
 ##################---- FILTER ----##################
