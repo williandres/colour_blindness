@@ -1,7 +1,7 @@
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
-######----- MAIN FUNCTIONS -----#####
+##################---- MAIN FUNCTIONS----##################
 def upload_img(route)->list:
   mat = mpimg.imread(route).tolist()
   height = len(mat)
@@ -17,7 +17,6 @@ def upload_img(route)->list:
       pixel = (r, g, b)
       row.append(pixel)
     img.append(row)
-
   return img
 
 def image_view(img:list)->None:
@@ -31,7 +30,7 @@ def image_view(img:list)->None:
       row.append([r, g, b])
     mat.append(row)
   plt.imshow(mat)
-  plt.show
+  plt.savefig(f'/home/willian/colour_blindness/output/new_img.png')
 
 ##################---- FILTER ----##################
 def rotate90_img(img:list)->list:
@@ -42,14 +41,14 @@ def rotate90_img(img:list)->list:
   for i in range(height):
     row = []
     for j in range(width):
-      row.append(img[i][j])
+      row.insert(0,img[j][i])
     new_img.append(row)
 
-  return img
-#-#-# RUN -#-#-#
-def run():
-  image_view(rotate90_img(upload_img('/content/art.png'))) # Image route
+  return new_img
 
+##################---- RUN ----##################
+def run():
+  image_view(rotate90_img(upload_img('/home/willian/colour_blindness/content/tech.png'))) # Image route
 
 if __name__ == '__main__':
   run()
