@@ -34,18 +34,6 @@ def image_view(img:list)->None:
   plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1200)
 
 ##################---- FILTER ----##################
-
-# def rotate90_img(img:list)->list:
-#   height = len(img[0])
-#   width = len(img)
-#   new_img = []
-#   for i in range(height):
-#     row = []
-#     for j in range(width):
-#       row.insert(0,img[j][i])
-#     new_img.append(row)
-#   return new_img
-
 def protanopia(img:list)->list:
   height = len(img)
   width = len(img[0])
@@ -59,7 +47,7 @@ def protanopia(img:list)->list:
 
 ##################---- RUN ----##################
 def run():
-  image_view(filter(upload_img('/home/willian/colour_blindness/content/art.png'))) # Image route
+  image_view(upload_img('/home/willian/colour_blindness/content/art.png')) # Image route
 
 if __name__ == '__main__':
   run()
