@@ -3,33 +3,11 @@ import matplotlib.pyplot as plt
 import daltonism as dalt
 
 ##################---- MAIN FUNCTIONS----##################
-def upload_img(route)->list:
-  mat = mpimg.imread(route).tolist()
-  height = len(mat)
-  width = len(mat[0])
-  img = []
-  for i in range(height):
-    row = []
-    for j in range(width):
-      r = mat[i][j][0]
-      g = mat[i][j][1]
-      b = mat[i][j][2]
-      pixel = (r, g, b)
-      row.append(pixel)
-    img.append(row)
-  return img
+def upload_img(route:str)->list:
+  return mpimg.imread(route).tolist()
 
 def image_view(img:list)->None:
-  height = len(img)
-  width = len(img[0])
-  mat = []
-  for i in range(height):
-    row = []
-    for j in range(width):
-      r, g, b = img[i][j]
-      row.append([r, g, b])
-    mat.append(row)
-  plt.imshow(mat)
+  plt.imshow(img)
   plt.axis('off')
   plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1200)
 
