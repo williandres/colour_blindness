@@ -2,6 +2,7 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import daltonism_simulator as daltsim
 import daltonism_friendly as daltfri
+from numba import njit
 
 ##################---- MAIN FUNCTIONS----##################
 def upload_img(route:str)->list:
@@ -22,11 +23,32 @@ def protanopia_sim(img:list)->list:
     for j in range(width):
       row.append(daltsim.p(img[i][j])) # p = protanopia, d = deuteranopia, t = tritanopia
     new_img.append(row)
+  print("1")
+  print(new_img[290][0])
+  print(new_img[290][25])
+  print("2")
+  print(new_img[290][0])
+  print(new_img[290][25])
+  print("3")
+  print(new_img[290][0])
+  print(new_img[290][25])
+  print("4")
+  print(new_img[290][0])
+  print(new_img[290][25])
+  print("5")
+  print(new_img[290][0])
+  print(new_img[290][25])
+  print("6")
+  print(new_img[290][0])
+  print(new_img[290][25])
+  print("7")
+  print(new_img[290][0])
+  print(new_img[290][25])
   return new_img
 
 ##################---- RUN ----##################
 def run():
-  image_view(protanopia_sim(upload_img('/home/willian/colour_blindness/content/art.png'))) # Image route
+  image_view(protanopia_sim(upload_img('/home/willian/colour_blindness/content/proto.png'))) # Image route
 
 if __name__ == '__main__':
   run()
