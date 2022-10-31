@@ -12,7 +12,7 @@ def image_view(img:list)->None:
   plt.axis('off')
   plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1200)
 
-##################---- FILTER ----##################
+##################---- SIMULATION ----##################
 def protanopia_sim(img:list)->list:
   height = len(img)
   width = len(img[0])
