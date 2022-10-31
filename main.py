@@ -10,7 +10,7 @@ def upload_img(route:str)->list:
 def image_view(img:list)->None:
   plt.imshow(img)
   plt.axis('off')
-  plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1000)
+  plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1200)
 
 ##################---- FILTER ----##################
 def protanopia_sim(img:list)->list:
@@ -26,7 +26,7 @@ def protanopia_sim(img:list)->list:
 
 ##################---- RUN ----##################
 def run():
-  image_view(protanopia_sim(upload_img('/home/willian/colour_blindness/content/art.png'))) # Image route
+  image_view(protanopia_sim(upload_img('/home/willian/colour_blindness/content/b.png'))) # Image route
 
 if __name__ == '__main__':
   run()
