@@ -13,7 +13,7 @@ def image_view(img:list)->None:
   plt.savefig(f'/home/willian/colour_blindness/output/new_img.png', bbox_inches='tight', pad_inches=0, dpi=1200)
 
 ##################---- SIMULATION ----##################
-def protanopia_sim(img:list)->list:
+def sim(img:list)->list:
   height = len(img)
   width = len(img[0])
   new_img = []
@@ -26,7 +26,7 @@ def protanopia_sim(img:list)->list:
 
 ##################---- RUN ----##################
 def run():
-  image_view(protanopia_sim(upload_img('/home/willian/colour_blindness/content/b.png'))) # Image route
+  image_view(sim(upload_img('/home/willian/colour_blindness/content/normal.png'))) # Image route
 
 if __name__ == '__main__':
   run()
