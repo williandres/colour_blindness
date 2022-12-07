@@ -1,7 +1,7 @@
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
-import daltonism_simulator as daltsim
-import daltonism_friendly as daltfri
+import functions.daltonism_simulator as daltsim
+import functions.daltonism_friendly as daltfri
 
 ##################---- MAIN FUNCTIONS----##################
 def upload_img(route:str)->list:
